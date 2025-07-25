@@ -1,0 +1,39 @@
+hardware:
+  camera_index: 0
+  capture_api: DSHOW
+  pixel_ratio: 1.95
+input:
+  frame_skip: 0
+  loop: true
+  type: camera
+  video_path: ./ff85_test.mp4
+model:
+  confidence: 0.3
+  device: cpu
+  imgsz: 640
+  weights_path: ./mark2.pt
+model_paths:
+  model_1: model_1_rf.pkl
+  model_3: model_3_comprehensive_rf.pkl
+  model_4: model_4_cp_droplet_rf.pkl
+  model_dir: ./
+  scaler_1: model_1_scaler.pkl
+  scaler_3: model_3_scaler.pkl
+  scaler_4: model_4_scaler.pkl
+pressure_server:
+  continuous_channel: 1
+  device_id: PC10200200200000266
+  dispersed_channel: 2
+  host: localhost
+  port: 5001
+processing:
+  boundary_threshold: 10
+  detection_interval: 0.033
+  duplicate_threshold: 5
+  history_size: 5
+  max_diameter: 500
+  min_diameter: 30
+system:
+  pressure_limits:
+  - 0
+  - 1500
